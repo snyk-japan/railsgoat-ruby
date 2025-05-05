@@ -388,12 +388,6 @@
 
 
 // snippet new window popup function
-function escapeHtml(str) {
-  var div = document.createElement('div');
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-}
-
 function snippetPopup(content) {
 	 top.consoleRef=window.open('','myconsole',
 	  'width=600,height=300'
@@ -405,9 +399,9 @@ function snippetPopup(content) {
 	   +',scrollbars=1'
 	   +',resizable=1');
 	 top.consoleRef.document.writeln(
-	  '<html><head><title>Snippet :: Code View :: '+escapeHtml(location.href)+'</title></head>'
+	  '<html><head><title>Snippet :: Code View :: '+location.href+'</title></head>'
 	   +'<body bgcolor=white onLoad="self.focus()">'
-	   +'<pre>'+escapeHtml(content)+'</pre>'
+	   +'<pre>'+content+'</pre>'
 	   +'</body></html>'
 	 );
 	 top.consoleRef.document.close();
